@@ -1,0 +1,8 @@
+.env
+.env.example
+README.md
+requirements.txt
+value
+.vscode/launch.json
+__pycache__/GoofishCookieFetcher.cpython-312.pyc
+__pycache__/MyCookieCloud.cpython-312.pyc
