@@ -52,3 +52,5 @@ htmlcov/
 .nox/
 .hypothesis/
 .coverage.* 
+xianyu_deepseek_api_key.txt
+testds.py

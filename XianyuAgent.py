@@ -3,7 +3,7 @@ from typing import List, Dict
 import os
 from openai import OpenAI
 from loguru import logger
-
+import requests
 
 class XianyuReplyBot:
     def __init__(self):
@@ -12,6 +12,9 @@ class XianyuReplyBot:
             api_key=os.getenv("API_KEY"),
             base_url=os.getenv("MODEL_BASE_URL", "https://dashscope.aliyuncs.com/compatible-mode/v1"),
         )
+        self.session = requests.Session()
+        self.session.trust_env = False  # 禁用系统代理
+        self.session.proxies = {}  # 清空代理设置
         self._init_system_prompts()
         self._init_agents()
         self.router = IntentRouter(self.agents['classify'])

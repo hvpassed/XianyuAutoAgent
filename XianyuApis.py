@@ -12,6 +12,8 @@ class XianyuApis:
     def __init__(self):
         self.url = 'https://h5api.m.goofish.com/h5/mtop.taobao.idlemessage.pc.login.token/1.0/'
         self.session = requests.Session()
+        self.session.trust_env = False  # 禁用系统代理
+        self.session.proxies = {}  # 清空代理设置
         self.session.headers.update({
             'accept': 'application/json',
             'accept-language': 'zh-CN,zh;q=0.9',
